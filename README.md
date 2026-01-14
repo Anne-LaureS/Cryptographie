@@ -1,5 +1,3 @@
-# Cryptographie
-
 # 🔐 Chiffrement XOR & Vigenère
 Ce dépôt illustre deux méthodes de chiffrement **symétrique classiques** à but pédagogique :
 - XOR
