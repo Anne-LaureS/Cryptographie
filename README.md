@@ -1,4 +1,4 @@
-### 🔐 **Chiffrement avec les méthodes XOR, Vigenère et César**
+## 🔐 **Chiffrement avec les méthodes XOR, Vigenère et César**
 
 Ce dépôt illustre plusieurs méthodes de **chiffrement symétrique classiques** à des fins **strictement pédagogiques**.
 L’objectif est de comprendre les principes fondamentaux du chiffrement avant d’aborder des algorithmes modernes réellement sécurisés.
