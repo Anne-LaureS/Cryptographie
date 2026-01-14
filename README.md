@@ -6,7 +6,7 @@ Ce dépôt illustre deux méthodes de chiffrement **symétrique classiques** à 
 - Vigenère
   
 ## XOR
-Chiffrement par OU exclusif :
+Chiffrement par OU exclusif pour une chaine de caractères et pour un fichier :
 message ⊕ clé = chiffré  
 chiffré ⊕ clé = message  
 Même opération pour chiffrer et déchiffrer.
