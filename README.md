@@ -1,4 +1,4 @@
-# 🔐 Chiffrement XOR & Vigenère
+# 🔐 Chiffrement avec les méthodes XOR, Vigenère et César
 Ce dépôt illustre deux méthodes de chiffrement **symétrique classiques** à but pédagogique :
 - XOR
 - Vigenère
@@ -13,5 +13,7 @@ Même opération pour chiffrer et déchiffrer.
 Décalage alphabétique basé sur une clé répétée :
 (chiffre + clé) mod 26  
 Déchiffrement par soustraction.
+
+## César
 
 ⚠️ Méthodes obsolètes, usage strictement éducatif.
