@@ -24,7 +24,8 @@ def chiffrer_fichier(chemin, cle):
     print("Fichier chiffré et réécrit avec succès.")
 
 
-# Exemple d'utilisation
+# Expérimentation
 chemin_fichier = "monFichier.txt"
+
 
 chiffrer_fichier(chemin_fichier, cleToto)
