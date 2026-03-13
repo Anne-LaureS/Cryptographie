@@ -11,6 +11,21 @@ L’objectif est de comprendre les principes fondamentaux du chiffrement avant d
 
 ---
 
+## Structure du projet
+```
+Cryptographie/
+
+├── xor/
+│   └── xor.py
+├── vigenere/
+│   └── vigenere.py
+├── cesar/
+│   └── cesar.py
+└── README.md
+```
+
+---
+
 ## 🔁 XOR
 
 Chiffrement par **OU exclusif bit à bit** :
