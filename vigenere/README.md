@@ -1,33 +1,68 @@
-## 🔐 **Chiffrement avec les méthodes XOR, Vigenère et César**
+# 🔐 Méthode de Chiffrement de Vigenère  
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Status](https://img.shields.io/badge/Status-Fonctionnel-brightgreen)
+![Projet](https://img.shields.io/badge/Projet-Pédagogique-orange)
 
-Ce dépôt illustre plusieurs méthodes de **chiffrement symétrique classiques** à des fins **strictement pédagogiques**.
-L’objectif est de comprendre les principes fondamentaux du chiffrement avant d’aborder des algorithmes modernes réellement sécurisés.
+Le chiffrement de Vigenère est une amélioration du chiffrement de César.  
+Il utilise une **clé composée de plusieurs lettres**, ce qui permet d’appliquer plusieurs décalages successifs et rend l’analyse fréquentielle beaucoup plus difficile.
 
-## 🔁 XOR
+---
 
-Chiffrement par **OU exclusif bit à bit** :
+## 🧠 Principe du chiffrement
 
-* `message ⊕ clé = chiffré`
-* `chiffré ⊕ clé = message`
-  La même opération est utilisée pour le chiffrement et le déchiffrement.
-  Simple, rapide… et totalement vulnérable si la clé est courte ou réutilisée (bonjour l’analyse fréquentielle).
+Le chiffrement de Vigenère repose sur une **clé** (ex : `CLE`) appliquée en boucle sur le message.
 
-## 🔤 Vigenère
+Chaque lettre de la clé correspond à un décalage :
 
-Chiffrement par **décalage alphabétique** basé sur une clé répétée :
+| Lettre clé | Décalage |
+|------------|----------|
+| A | +0 |
+| B | +1 |
+| C | +2 |
+| … | … |
+| Z | +25 |
 
-* `(lettre_message + lettre_clé) mod 26`
-  Le déchiffrement s’effectue par soustraction.
-  Plus robuste que César sur le papier, mais cassable dès qu’on comprend les longueurs de clé (merci Kasiski).
+Exemple :  
+Message : `BONJOUR`  
+Clé : `CLE` → répétée : `CLECLEC`
 
-## 🏛️ César
+Chaque lettre du message est décalée selon la lettre correspondante de la clé.
 
-Chiffrement par **décalage fixe de l’alphabet**.
-Aucune clé réelle, une sécurité équivalente à un cadenas en plastique.
+---
 
-## ⚠️ **Attention**
-Ces méthodes sont **obsolètes et non sécurisées**.
-Elles ne doivent **jamais** être utilisées en production ou pour protéger des données sensibles.
-Elles servent uniquement à **comprendre les bases** du chiffrement symétrique avant de passer à AES, RSA & co.
+## 📁 Contenu du dossier
 
-Si tu veux, on peut ensuite ajouter une section *“Pourquoi ces algorithmes sont cassables”* ou une comparaison avec un chiffrement moderne pour bien marquer la frontière entre pédagogie et sécurité réelle.
+| Fichier | Description |
+|--------|-------------|
+| **Chiffrer_Fichier.py** | Chiffre un fichier texte avec une clé |
+| **Dechiffrement.py** | Déchiffre un texte chiffré avec la même clé |
+| **monfichier.txt** | Exemple de fichier à chiffrer |
+| **README.md** | Documentation du dossier |
+
+---
+
+## ▶️ Utilisation
+
+### 🔸 Chiffrement d’un fichier
+```bash
+python3 Chiffrer_Fichier.py monfichier.txt CLE
+```
+
+### 🔸 Déchiffrement d’un fichier
+```bash
+python3 Dechiffrement.py fichier_chiffre.txt CLE
+```
+
+---
+
+## ⚠️ Limites du chiffrement de Vigenère
+- Plus robuste que César, mais cassable si la clé est courte
+- Vulnérable à l’attaque de Kasiski
+- Ne protège pas contre les attaques modernes
+
+---
+
+## 🔗 Liens vers les autres méthodes du projet
+- Méthode de César → dossier ```cesar/```
+- Méthode XOR → dossier ```xor/```
+
