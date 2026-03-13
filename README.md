@@ -30,3 +30,4 @@ Ces méthodes sont **obsolètes et non sécurisées**.
 Elles ne doivent **jamais** être utilisées en production ou pour protéger des données sensibles.
 Elles servent uniquement à **comprendre les bases** du chiffrement symétrique avant de passer à AES, RSA & co.
 
+Si tu veux, on peut ensuite ajouter une section *“Pourquoi ces algorithmes sont cassables”* ou une comparaison avec un chiffrement moderne pour bien marquer la frontière entre pédagogie et sécurité réelle.
