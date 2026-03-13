@@ -1,4 +1,6 @@
-# 🔐 Chiffrement de César
+# 🔐 Méthode de Chiffrement de César  
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Status](https://img.shields.io/badge/Status-Fonctionnel-brightgreen)
 
 Ce dossier contient une implémentation complète du chiffrement de César, un des plus anciens algorithmes de cryptographie par substitution.  
 Il repose sur un décalage fixe appliqué à chaque lettre du message.
