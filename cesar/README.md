@@ -5,10 +5,10 @@ Il repose sur un décalage fixe appliqué à chaque lettre du message.
 
 ---
 
-## 📌 Principe du chiffrement
+## 🧠 Principe du chiffrement
 
 Le chiffrement de César consiste à décaler chaque lettre de l’alphabet d’un nombre fixe de positions.  
-Exemple avec un décalage de 3 :
+Exemple avec un décalage de **3** :
 
 - A → D  
 - B → E  
@@ -34,25 +34,35 @@ Ce chiffrement est simple mais illustre les bases de la cryptographie classique.
 
 ---
 
-## ▶️ Exemple d’utilisation
+## ▶️ Utilisation
 
-### Chiffrement
+### Chiffrement d'un message
 ```bash
 python3 Chiffrement.py "MESSAGE" 3
 ```
 
----
-
-## Déchiffrement
-
+### Déchiffrement
 ```
 python3 Dechiffrement.py "PHHPDJH" 3
 ```
 
+### Tester plusieurs décalages
+```
+python3 ProgrammeDecalage.py
+```
+
 ---
 
-## Limites du chiffrement de César
+## ⚠️ Limites du chiffrement de César
 - Très faible sécurité
 - Vulnérable à l’analyse fréquentielle
 - Seulement 26 clés possibles (pour l’alphabet latin)
 
+---
+
+## 🔗 Liens vers les autres méthodes du projet
+- ## Méthode de Vigenère → dossier ```vigenere/```
+
+- ## Méthode XOR → dossier ```xor/```
+
+Chaque dossier contient son propre code et sa propre documentation.
