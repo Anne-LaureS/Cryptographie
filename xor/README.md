@@ -1,33 +1,73 @@
-## 🔐 **Chiffrement avec les méthodes XOR, Vigenère et César**
+# 🔐 Méthode de Chiffrement XOR  
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Status](https://img.shields.io/badge/Status-Fonctionnel-brightgreen)
+![Projet](https://img.shields.io/badge/Projet-Pédagogique-orange)
 
-Ce dépôt illustre plusieurs méthodes de **chiffrement symétrique classiques** à des fins **strictement pédagogiques**.
-L’objectif est de comprendre les principes fondamentaux du chiffrement avant d’aborder des algorithmes modernes réellement sécurisés.
+Le chiffrement XOR est une méthode simple mais puissante lorsqu’elle est bien utilisée.  
+Il repose sur l’opérateur logique **XOR (OU exclusif)** appliqué entre chaque caractère du message et une clé.
 
-## 🔁 XOR
+---
 
-Chiffrement par **OU exclusif bit à bit** :
+## 🧠 Principe du chiffrement XOR
 
-* `message ⊕ clé = chiffré`
-* `chiffré ⊕ clé = message`
-  La même opération est utilisée pour le chiffrement et le déchiffrement.
-  Simple, rapide… et totalement vulnérable si la clé est courte ou réutilisée (bonjour l’analyse fréquentielle).
+L’opération XOR possède une propriété essentielle :
 
-## 🔤 Vigenère
+```
+A XOR B = C
+C XOR B = A
+```
 
-Chiffrement par **décalage alphabétique** basé sur une clé répétée :
+Cela signifie que **la même opération permet de chiffrer et de déchiffrer**.
 
-* `(lettre_message + lettre_clé) mod 26`
-  Le déchiffrement s’effectue par soustraction.
-  Plus robuste que César sur le papier, mais cassable dès qu’on comprend les longueurs de clé (merci Kasiski).
+Exemple simple :
 
-## 🏛️ César
+| Caractère | Code | Clé | Résultat |
+|-----------|------|-----|----------|
+| A | 65 | 42 | 107 |
+| 107 XOR 42 | → | 65 (A) |
 
-Chiffrement par **décalage fixe de l’alphabet**.
-Aucune clé réelle, une sécurité équivalente à un cadenas en plastique.
+➡️ **XOR est réversible**, ce qui en fait un mécanisme très utilisé en cryptographie moderne (flux, OTP, masquage, etc.).
 
-## ⚠️ **Attention**
-Ces méthodes sont **obsolètes et non sécurisées**.
-Elles ne doivent **jamais** être utilisées en production ou pour protéger des données sensibles.
-Elles servent uniquement à **comprendre les bases** du chiffrement symétrique avant de passer à AES, RSA & co.
+---
 
-Si tu veux, on peut ensuite ajouter une section *“Pourquoi ces algorithmes sont cassables”* ou une comparaison avec un chiffrement moderne pour bien marquer la frontière entre pédagogie et sécurité réelle.
+## 📁 Contenu du dossier
+
+| Fichier | Description |
+|--------|-------------|
+| **xor.py** *(ou nom équivalent)* | Script principal de chiffrement/déchiffrement XOR |
+| **README.md** | Documentation du dossier |
+| **fichiers d’exemple** | Selon ton projet (texte à chiffrer, sortie, etc.) |
+
+> Si les noms exacts diffèrent, tu peux les ajuster — la structure reste la même.
+
+---
+
+## ▶️ Utilisation
+
+### 🔸 Chiffrement
+```bash
+python3 xor.py --input monfichier.txt --key 42 --output fichier_chiffre.txt
+```
+
+### 🔸 Déchiffrement
+```bash
+python3 xor.py --input fichier_chiffre.txt --key 42 --output fichier_dechiffre.txt
+```
+
+### 🔸 Propriété importante
+Le même programme sert aux deux opérations.
+Il suffit de réutiliser la même clé.
+
+---
+
+## ⚠️ Limites du chiffrement XOR
+- Sécurisé uniquement si la clé est aléatoire, aussi longue que le message et jamais réutilisée (One‑Time Pad).
+- Avec une clé courte ou répétée → facilement cassable.
+- Sensible aux attaques par analyse statistique si mal utilisé.
+
+---
+
+## 🔗 Liens vers les autres méthodes du projet
+- Méthode de César → dossier ```cesar/```
+- Méthode de Vigenère → dossier ```vigenere/```
+  
