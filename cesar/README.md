@@ -1,40 +1,58 @@
-## 🔐 **Chiffrement avec les méthodes XOR, Vigenère et César**
+# 🔐 Chiffrement de César
 
-Ce dépôt illustre plusieurs méthodes de **chiffrement symétrique classiques** à des fins **strictement pédagogiques**.
-L’objectif est de comprendre les principes fondamentaux du chiffrement avant d’aborder des algorithmes modernes réellement sécurisés.
-
----
-
-## 🔁 XOR
-
-Chiffrement par **OU exclusif bit à bit** :
-
-* `message ⊕ clé = chiffré`
-* `chiffré ⊕ clé = message`
-  La même opération est utilisée pour le chiffrement et le déchiffrement.
-  Simple, rapide… et totalement vulnérable si la clé est courte ou réutilisée (bonjour l’analyse fréquentielle).
+Ce dossier contient une implémentation complète du chiffrement de César, un des plus anciens algorithmes de cryptographie par substitution.  
+Il repose sur un décalage fixe appliqué à chaque lettre du message.
 
 ---
 
-## 🔤 Vigenère
+## 📌 Principe du chiffrement
 
-Chiffrement par **décalage alphabétique** basé sur une clé répétée :
+Le chiffrement de César consiste à décaler chaque lettre de l’alphabet d’un nombre fixe de positions.  
+Exemple avec un décalage de 3 :
 
-* `(lettre_message + lettre_clé) mod 26`
-  Le déchiffrement s’effectue par soustraction.
-  Plus robuste que César sur le papier, mais cassable dès qu’on comprend les longueurs de clé (merci Kasiski).
+- A → D  
+- B → E  
+- C → F  
+- …  
+- X → A  
+- Y → B  
+- Z → C  
+
+Ce chiffrement est simple mais illustre les bases de la cryptographie classique.
 
 ---
 
-## 🏛️ César
+## 📁 Contenu du dossier
 
-Chiffrement par **décalage fixe de l’alphabet**.
-Aucune clé réelle, une sécurité équivalente à un cadenas en plastique.
+| Fichier | Rôle |
+|--------|------|
+| **Chiffrement.py** | Script permettant de chiffrer un message avec un décalage donné |
+| **Dechiffrement.py** | Script permettant de déchiffrer un message chiffré |
+| **ProgrammeDecalage.py** | Programme interactif pour tester différents décalages |
+| **FichierAChiffrer.txt** | Exemple de fichier texte à chiffrer |
+| **README.md** | Documentation du dossier |
 
---- 
+---
 
-## ⚠️ **Attention**
-Ces méthodes sont **obsolètes et non sécurisées**.
-Elles ne doivent **jamais** être utilisées en production ou pour protéger des données sensibles.
-Elles servent uniquement à **comprendre les bases** du chiffrement symétrique avant de passer à AES, RSA & co.
+## ▶️ Exemple d’utilisation
+
+### Chiffrement
+```bash
+python3 Chiffrement.py "MESSAGE" 3
+```
+
+---
+
+## Déchiffrement
+
+```
+python3 Dechiffrement.py "PHHPDJH" 3
+```
+
+---
+
+## Limites du chiffrement de César
+- Très faible sécurité
+- Vulnérable à l’analyse fréquentielle
+- Seulement 26 clés possibles (pour l’alphabet latin)
 
