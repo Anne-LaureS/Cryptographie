@@ -1,8 +1,8 @@
 ## 🔐 **Chiffrement avec les méthodes XOR, Vigenère et César**
 
-https://img.shields.io/badge/Python-3.x-blue?logo=python  
+[https://img.shields.io/badge/Python-3.x-blue?logo=python  
 https://img.shields.io/badge/Projet-P%C3%A9dagogique-orange  
-https://img.shields.io/badge/Status-Actif-brightgreen
+https://img.shields.io/badge/Status-Actif-brightgreen]
 
 Ce dépôt illustre plusieurs méthodes de **chiffrement symétrique classiques** à des fins **strictement pédagogiques**.
 L’objectif est de comprendre les principes fondamentaux du chiffrement avant d’aborder des algorithmes modernes réellement sécurisés.
