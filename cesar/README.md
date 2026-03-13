@@ -61,8 +61,8 @@ python3 ProgrammeDecalage.py
 ---
 
 ## 🔗 Liens vers les autres méthodes du projet
-- ## Méthode de Vigenère → dossier ```vigenere/```
 
-- ## Méthode XOR → dossier ```xor/```
+- Méthode de Vigenère → dossier ```vigenere/```
+- Méthode XOR → dossier ```xor/```
 
 Chaque dossier contient son propre code et sa propre documentation.
