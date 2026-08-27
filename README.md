@@ -19,6 +19,9 @@ La même opération est utilisée pour le chiffrement et le déchiffrement.
 Simple, rapide… et **totalement vulnérable** si la clé est courte ou réutilisée.
 
 📁 Voir le dossier : ```xor/```
+🔓 Cassage sans connaître la clé : ```xor/Cassage_XOR.py``` — brute force 1 octet, attaque en
+texte clair connu (crib), clé répétée de longueur inconnue. Utile en CTF quand on récupère un
+message XOR-é dont on devine le format (ex: un flag `THM{...}`) sans connaître la clé.
 
 ---
 
