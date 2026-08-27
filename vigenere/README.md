@@ -34,24 +34,36 @@ Chaque lettre du message est décalée selon la lettre correspondante de la clé
 
 | Fichier | Description |
 |--------|-------------|
-| **Chiffrer_Fichier.py** | Chiffre un fichier texte avec une clé |
-| **Dechiffrement.py** | Déchiffre un texte chiffré avec la même clé |
-| **monfichier.txt** | Exemple de fichier à chiffrer |
+| **Chiffrement.py** | Chiffre un message (codé en dur dans le script) avec une clé |
+| **Dechiffrement.py** | Déchiffre ce même message avec la même clé |
+| **Cassage_Vigenere.py** | Retrouve la clé sans la connaître (Kasiski + analyse fréquentielle) |
 | **README.md** | Documentation du dossier |
 
 ---
 
 ## ▶️ Utilisation
 
-### 🔸 Chiffrement d’un fichier
+Les scripts sont des démonstrations autonomes : le message et la clé sont définis dans le bloc
+`if __name__ == "__main__":` de chaque fichier, à modifier directement pour tester d'autres
+valeurs — pas d'argument en ligne de commande.
+
+### 🔸 Chiffrement
 ```bash
-python3 Chiffrer_Fichier.py monfichier.txt CLE
+python3 Chiffrement.py
 ```
 
-### 🔸 Déchiffrement d’un fichier
+### 🔸 Déchiffrement (chiffre le message puis le déchiffre pour vérifier)
 ```bash
-python3 Dechiffrement.py fichier_chiffre.txt CLE
+python3 Dechiffrement.py
 ```
+
+### 🔓 Cassage (clé inconnue)
+```bash
+python3 Cassage_Vigenere.py
+```
+Édite `message_clair`/`cle_secrete` en bas du script pour tester avec ton propre texte. Prévois
+un texte d'au moins quelques phrases : l'analyse fréquentielle par colonne a besoin d'assez de
+lettres pour être fiable, quelques mots ne suffisent pas.
 
 ---
 

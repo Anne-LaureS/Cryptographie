@@ -25,7 +25,7 @@ def chiffrer_fichier(chemin, cle):
 
 
 # Expérimentation
-chemin_fichier = "monFichier.txt"
+chemin_fichier = "monfichier.txt"
 
 
 chiffrer_fichier(chemin_fichier, cleToto)

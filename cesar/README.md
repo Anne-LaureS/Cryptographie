@@ -28,9 +28,8 @@ Ce chiffrement est simple mais illustre les bases de la cryptographie classique.
 
 | Fichier | Rôle |
 |--------|------|
-| **Chiffrement.py** | Script permettant de chiffrer un message avec un décalage donné |
-| **Dechiffrement.py** | Script permettant de déchiffrer un message chiffré |
-| **ProgrammeDecalage.py** | Programme interactif pour tester différents décalages |
+| **ProgrammeDecalage.py** | Chiffre un fichier texte avec un décalage donné (déchiffrement = même script avec un décalage négatif) |
+| **Cassage_Cesar.py** | Casse le chiffrement sans connaître le décalage — brute force des 26 possibilités |
 | **FichierAChiffrer.txt** | Exemple de fichier texte à chiffrer |
 | **README.md** | Documentation du dossier |
 
@@ -38,20 +37,26 @@ Ce chiffrement est simple mais illustre les bases de la cryptographie classique.
 
 ## ▶️ Utilisation
 
-### Chiffrement d'un message
+### Chiffrement d'un fichier
 ```bash
-python3 Chiffrement.py "MESSAGE" 3
+python3 ProgrammeDecalage.py FichierAChiffrer.txt 3
 ```
+Réécrit le fichier avec son contenu chiffré (décalage de 3 lettres).
 
 ### Déchiffrement
-```
-python3 Dechiffrement.py "PHHPDJH" 3
+Même script, avec le décalage négatif :
+```bash
+python3 ProgrammeDecalage.py FichierAChiffrer.txt -3
 ```
 
-### Tester plusieurs décalages
+### 🔓 Cassage (décalage inconnu)
+```bash
+python3 Cassage_Cesar.py
 ```
-python3 ProgrammeDecalage.py
-```
+Affiche les 26 décalages possibles pour le texte codé en dur dans le script — un décalage
+donnant du texte lisible saute aux yeux immédiatement (seulement 26 possibilités, pas besoin de
+scoring automatique). Édite `texte_chiffre` en haut du bloc `__main__` pour tester ton propre
+texte.
 
 ---
 
