@@ -19,9 +19,38 @@ La même opération est utilisée pour le chiffrement et le déchiffrement.
 Simple, rapide… et **totalement vulnérable** si la clé est courte ou réutilisée.
 
 📁 Voir le dossier : ```xor/```
-🔓 Cassage sans connaître la clé : ```xor/Cassage_XOR.py``` — brute force 1 octet, attaque en
-texte clair connu (crib), clé répétée de longueur inconnue. Utile en CTF quand on récupère un
-message XOR-é dont on devine le format (ex: un flag `THM{...}`) sans connaître la clé.
+
+### 🔓 Casser une clé XOR inconnue (CTF)
+
+`xor/Cassage_XOR.py` — utile quand on récupère un message XOR-é (ex: un flag TryHackMe) sans
+connaître la clé, mais en devinant son format (ex: `THM{...}`, `flag{...}`).
+
+**Marche à suivre :**
+
+1. Ouvre `xor/Cassage_XOR.py`, descends jusqu'au bloc `if __name__ == "__main__":` tout en bas.
+2. Remplace `hex_recu` par le hex reçu dans ton challenge :
+   ```python
+   hex_recu = "ton_nouveau_hex_ici"
+   ```
+3. Remplace `"THM{"` (dans l'appel à `casser_par_texte_connu`) par le début de texte que tu
+   devines pour CE challenge (ex: `"flag{"`, `"CTF{"`) :
+   ```python
+   cle_partielle = bytearray(casser_par_texte_connu(chiffre, "THM{", longueur_cle))
+   ```
+4. Si tu connais la longueur de la clé, ajuste `longueur_cle = 5` en conséquence (sinon essaie
+   plusieurs valeurs, ou utilise directement `casser_cle_repetee_longueur_inconnue(chiffre)` à
+   la place des étapes 3/4 si tu n'as ni format de texte connu ni longueur de clé).
+5. Lance depuis le dossier `xor/` :
+   ```powershell
+   python Cassage_XOR.py
+   ```
+6. Dans la liste de candidats affichée, repère la ligne dont le texte décodé est **lisible et
+   cohérent** (les autres candidats donnent du charabia) — le `clé=` associé est la réponse.
+
+**Exemple concret (room TryHackMe W1seGuy)** : le serveur envoie un flag factice XOR-é avec une
+clé de 5 caractères alphanumériques aléatoires, en précisant que le vrai flag commence toujours
+par `THM{`. Il suffit de changer `hex_recu` à chaque nouvelle connexion — `"THM{"` et
+`longueur_cle = 5` restent valables pour toute cette room.
 
 ---
 
