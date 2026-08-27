@@ -63,6 +63,8 @@ Le déchiffrement s’effectue par soustraction.
 Plus robuste que César sur le papier, mais cassable dès qu’on comprend les longueurs de clé (attaque **Kasiski**).
 
 📁 Voir le dossier : ```vigenere/```
+🔓 Casser une clé inconnue : `vigenere/Cassage_Vigenere.py` (Kasiski + analyse fréquentielle —
+détail dans le README du dossier).
 
 ---
 
@@ -72,6 +74,8 @@ Chiffrement par **décalage fixe de l’alphabet**.
 Aucune clé réelle, une sécurité équivalente à un cadenas en plastique.
 
 📁 Voir le dossier : ```cesar/```
+🔓 Casser un décalage inconnu : `cesar/Cassage_Cesar.py` (brute force des 26 décalages possibles
+— détail dans le README du dossier).
 
 ---
 
