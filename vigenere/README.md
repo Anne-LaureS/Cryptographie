@@ -58,12 +58,33 @@ python3 Dechiffrement.py
 ```
 
 ### 🔓 Cassage (clé inconnue)
-```bash
-python3 Cassage_Vigenere.py
-```
-Édite `message_clair`/`cle_secrete` en bas du script pour tester avec ton propre texte. Prévois
-un texte d'au moins quelques phrases : l'analyse fréquentielle par colonne a besoin d'assez de
-lettres pour être fiable, quelques mots ne suffisent pas.
+
+`Cassage_Vigenere.py` sert quand tu as un texte chiffré en Vigenère **sans connaître ni la clé
+ni sa longueur** — Kasiski pour deviner la longueur, analyse fréquentielle pour deviner chaque
+lettre de la clé.
+
+**Marche à suivre :**
+
+1. Ouvre `Cassage_Vigenere.py`, descends jusqu'au bloc `if __name__ == "__main__":` tout en bas.
+2. Remplace `message_clair`/`cle_secrete` par ton propre texte à tester — ou, si tu as déjà un
+   texte chiffré réel (pas besoin de le générer toi-même), remplace directement la ligne
+   `texte_chiffre = chiffrer_vigenere(...)` par :
+   ```python
+   texte_chiffre = "ton texte chiffré ici"
+   ```
+3. Lance :
+   ```bash
+   python3 Cassage_Vigenere.py
+   ```
+4. Le script affiche les longueurs de clé candidates (Kasiski), puis devine directement la clé
+   pour la plus probable et déchiffre le texte avec.
+5. Vérifie que le texte déchiffré est **lisible et cohérent**. Si ce n'est pas le cas, la
+   longueur de clé la plus probable était la mauvaise — reprends `candidats[1]`, `candidats[2]`,
+   etc. (2ème, 3ème longueur la plus probable) à la place de `candidats[0]` dans l'appel à
+   `deviner_cle()`, et relance.
+
+⚠️ Il faut un texte d'au moins quelques phrases pour que ça marche : l'analyse fréquentielle par
+colonne a besoin d'assez de lettres pour être fiable, quelques mots ne suffisent pas.
 
 ---
 

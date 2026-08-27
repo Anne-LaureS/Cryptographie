@@ -50,13 +50,24 @@ python3 ProgrammeDecalage.py FichierAChiffrer.txt -3
 ```
 
 ### 🔓 Cassage (décalage inconnu)
-```bash
-python3 Cassage_Cesar.py
-```
-Affiche les 26 décalages possibles pour le texte codé en dur dans le script — un décalage
-donnant du texte lisible saute aux yeux immédiatement (seulement 26 possibilités, pas besoin de
-scoring automatique). Édite `texte_chiffre` en haut du bloc `__main__` pour tester ton propre
-texte.
+
+`Cassage_Cesar.py` sert quand tu as un texte chiffré en César sans connaître le décalage — pas
+besoin d'algorithme compliqué, seulement 26 décalages possibles.
+
+**Marche à suivre :**
+
+1. Ouvre `Cassage_Cesar.py`, descends jusqu'au bloc `if __name__ == "__main__":` tout en bas.
+2. Remplace `texte_chiffre` par ton propre texte chiffré :
+   ```python
+   texte_chiffre = "ton texte chiffré ici"
+   ```
+3. Lance :
+   ```bash
+   python3 Cassage_Cesar.py
+   ```
+4. Les 26 décalages possibles s'affichent d'un coup — parcours-les et repère celui qui donne du
+   texte **lisible et cohérent**, les 25 autres seront du charabia. Pas de scoring automatique
+   nécessaire ici : avec seulement 26 possibilités, l'œil humain repère la bonne immédiatement.
 
 ---
 
